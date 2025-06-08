@@ -59,7 +59,7 @@ src/
 ├── context/            // Favorites context
 ├── pages/              // Route views: Home, Search, Section, Favorites
 ├── router/             // Routing logic
-├── styles/             // CSS 
+├── utils/             // Local Storage
 ```
 
 ---
