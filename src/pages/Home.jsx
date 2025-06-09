@@ -6,12 +6,17 @@ function Home() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
+  const getData = async () => {
+    try {
       const data = await fetchTopStories();
       setArticles(data);
-    };
-    getData();
-  }, []);
+    } catch (error) {
+      console.error("Errore nel caricamento delle notizie dalla Home:", error);
+    }
+  };
+  getData();
+}, []);
+
 
   return (
     <div
