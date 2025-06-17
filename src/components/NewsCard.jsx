@@ -15,53 +15,25 @@ function NewsCard({ title, abstract, url, image }) {
   };
 
   return (
-    <div
-      style={{
-        backgroundColor: "#ffffff",
-        borderRadius: "10px",
-        padding: "1.5rem",
-        marginBottom: "2rem",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-      }}
-    >
+    <div className="news-card">
       {image && (
         <img
           src={image}
           alt={title}
-          style={{
-            width: "100%",
-            height: "auto",
-            maxHeight: "300px",
-            borderRadius: "8px",
-            objectFit: "cover",
-            marginBottom: "1rem",
-          }}
+          className="news-image"
         />
       )}
-      <h3 style={{ marginBottom: "0.5rem" }}>{title}</h3>
-      <p style={{ marginBottom: "1rem", color: "#444" }}>{abstract}</p>
+      <h3 className="news-title">{title}</h3>
+      <p className="news-abstract">{abstract}</p>
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        style={{
-          textDecoration: "none",
-          color: "#0077cc",
-          fontWeight: "bold",
-        }}
+        className="news-link"
       >
         Leggi di più →
       </a>
-      <button
-        onClick={handleFavorite}
-        style={{
-          marginLeft: "1rem",
-          background: "none",
-          border: "none",
-          fontSize: "1.2rem",
-          cursor: "pointer",
-        }}
-      >
+      <button onClick={handleFavorite} className="favorite-button">
         {isFavorite ? "⭐" : "☆"}
       </button>
     </div>

@@ -17,70 +17,72 @@ function SearchPage() {
 
     const data = await searchArticles(query.trim());
     const filtered = data.filter(article =>
-    article.headline.main.toLowerCase().includes(query.toLowerCase()) ||
-    article.abstract?.toLowerCase().includes(query.toLowerCase())
-  );
-  setResults(filtered);
-
-  setLoading(false);
-};
+      article.headline.main.toLowerCase().includes(query.toLowerCase()) ||
+      article.abstract?.toLowerCase().includes(query.toLowerCase())
+    );
+    setResults(filtered);
+    setLoading(false);
+  };
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-      <h2>🔍 Cerca notizie</h2>
+    <div className="page-content">
+      <div className="search-container">
+        <h2>🔍 Cerca notizie</h2>
 
-      <form onSubmit={handleSearch} style={{ marginBottom: "2rem" }}>
-        <input
-          type="text"
-          value={query}
-          placeholder="Es: boxing, art, politics..."
-          onChange={(e) => setQuery(e.target.value)}
-          style={{
-            padding: "0.5rem",
-            width: "65%",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-          }}
-        />
-        <button
-          type="submit"
-          style={{
-            padding: "0.5rem 1rem",
-            marginLeft: "1rem",
-            backgroundColor: "#007BFF",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
-        >
-          Cerca
-        </button>
-      </form>
-
-      {loading && <p>Caricamento risultati...</p>}
-
-      {!loading && searched && results.length === 0 && (
-        <p>Nessun articolo trovato per "{query}"</p>
-      )}
-
-      {!loading &&
-        results.map((article) => (
-          <NewsCard
-            key={article._id}
-            title={article.headline.main}
-            abstract={article.abstract || article.lead_paragraph}
-            url={article.web_url}
-            image={
-              article.multimedia?.[0]
-                ? `https://www.nytimes.com/${article.multimedia[0].url}`
-                : null
-            }
+        <form onSubmit={handleSearch} style={{ marginBottom: "2rem" }}>
+          <input
+            type="text"
+            value={query}
+            placeholder="Es: boxing, art, politics..."
+            onChange={(e) => setQuery(e.target.value)}
+            style={{
+              padding: "0.5rem",
+              width: "65%",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+            }}
           />
-        ))}
+          <button
+            type="submit"
+            style={{
+              padding: "0.5rem 1rem",
+              marginLeft: "1rem",
+              backgroundColor: "#007BFF",
+              color: "white",
+              border: "none",
+              borderRadius: "4px",
+              cursor: "pointer",
+            }}
+          >
+            Cerca
+          </button>
+        </form>
+
+        {loading && <p>Caricamento risultati...</p>}
+
+        {!loading && searched && results.length === 0 && (
+          <p>Nessun articolo trovato per "{query}"</p>
+        )}
+
+        {!loading &&
+          results.map((article) => (
+            <NewsCard
+              key={article._id}
+              title={article.headline.main}
+              abstract={article.abstract || article.lead_paragraph}
+              url={article.web_url}
+              image={
+                article.multimedia?.[0]
+                  ? `https://www.nytimes.com/${article.multimedia[0].url}`
+                  : null
+              }
+            />
+          ))}
+      </div>
     </div>
   );
 }
 
 export default SearchPage;
+
 

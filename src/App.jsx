@@ -5,10 +5,13 @@ import ArticleDetail from "./pages/ArticleDetail";
 import SearchPage from "./pages/SearchPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import Navbar from "./components/Navbar";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
+  const { darkMode } = useTheme();
+
   return (
-    <>
+    <div className={darkMode ? "dark" : "light"}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
@@ -18,10 +21,11 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
-export default App;
 
+
+export default App;
 

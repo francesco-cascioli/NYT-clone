@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
   const location = useLocation();
+  const { darkMode, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -20,15 +22,19 @@ function Navbar() {
 
   const navLinks = [
     { path: "/search", label: "🔍 Ricerca" },
-    { path: "/favorites", label: "⭐ Favoriti" },
-    { path: "/section/world", label: "🌍 World" },
+    { path: "/favorites", label: "⭐ Preferiti" },
+    { path: "/section/world", label: "🌍 Mondo" },
     { path: "/section/technology", label: "💻 Tech" },
     { path: "/section/arts", label: "🎨 Arte" },
-   // { path: "/section/sports", label: "🏅 Sports" },
   ];
 
   const linkStyle = (path) => ({
-    color: location.pathname === path ? "#00bfff" : "white",
+    color:
+      location.pathname === path
+        ? "#00bfff"
+        : darkMode
+        ? "#eee"
+        : "#111",
     textDecoration: "none",
     fontWeight: "500",
     fontSize: "1rem",
@@ -40,11 +46,14 @@ function Navbar() {
   return (
     <nav
       style={{
-        backgroundColor: "#222",
+        backgroundColor: darkMode ? "#1e1e1e" : "#fff",
         padding: "1rem 2rem",
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        boxShadow: darkMode
+          ? "0 2px 5px rgba(255, 255, 255, 0.05)"
+          : "0 2px 5px rgba(0, 0, 0, 0.1)",
       }}
     >
       <div
@@ -57,7 +66,13 @@ function Navbar() {
         }}
       >
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h1 style={{ color: "white", fontSize: "1.3rem", margin: 0 }}>
+          <h1
+            style={{
+              color: darkMode ? "#eee" : "#111",
+              fontSize: "1.3rem",
+              margin: 0,
+            }}
+          >
             📰 NYT Clone
           </h1>
         </Link>
@@ -66,7 +81,7 @@ function Navbar() {
           <div
             onClick={toggleMenu}
             style={{
-              color: "white",
+              color: darkMode ? "#eee" : "#111",
               fontSize: "1.5rem",
               cursor: "pointer",
             }}
@@ -74,12 +89,26 @@ function Navbar() {
             {isOpen ? <FaTimes /> : <FaBars />}
           </div>
         ) : (
-          <div style={{ display: "flex", gap: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {navLinks.map((link) => (
               <Link key={link.path} to={link.path} style={linkStyle(link.path)}>
                 {link.label}
               </Link>
             ))}
+            <button
+              onClick={toggleTheme}
+              style={{
+                marginLeft: "1rem",
+                background: "transparent",
+                border: `1px solid ${darkMode ? "#eee" : "#111"}`,
+                color: darkMode ? "#eee" : "#111",
+                borderRadius: "5px",
+                padding: "0.4rem 0.8rem",
+                cursor: "pointer",
+              }}
+            >
+              {darkMode ? "☀️ Light" : "🌙 Dark"}
+            </button>
           </div>
         )}
       </div>
@@ -96,6 +125,24 @@ function Navbar() {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              toggleTheme();
+              setIsOpen(false);
+            }}
+            style={{
+              marginTop: "1rem",
+              background: "transparent",
+              border: `1px solid ${darkMode ? "#eee" : "#111"}`,
+              color: darkMode ? "#eee" : "#111",
+              borderRadius: "5px",
+              padding: "0.4rem 0.8rem",
+              width: "100%",
+              cursor: "pointer",
+            }}
+          >
+            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
         </div>
       )}
     </nav>
