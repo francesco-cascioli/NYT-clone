@@ -39,9 +39,6 @@ This project was built from scratch using React and demonstrates routing, API in
 ├── utils/ → Utility functions (localStorage helpers)
 ├── router/ → App routing (if applicable)
 
-yaml
-Copia
-Modifica
 
 ---
 
