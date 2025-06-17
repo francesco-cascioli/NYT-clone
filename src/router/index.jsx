@@ -14,7 +14,7 @@ export default function AppRouter() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/section/:sectionName" element={<SectionPage />} />
-        <Route path="/article/:id" element={<ArticleDetail />} /> {/* opzionale */}
+        <Route path="/article/:id" element={<ArticleDetail />} /> 
       </Routes>
     </BrowserRouter>
   );

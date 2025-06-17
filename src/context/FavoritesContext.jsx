@@ -1,18 +1,18 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-// Crea il contesto
+
 const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
-  // Carica i preferiti da localStorage all'avvio
+  
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("nyt-favorites")) || [];
     setFavorites(saved);
   }, []);
 
-  // Salva i preferiti ogni volta che cambiano
+ 
   useEffect(() => {
     localStorage.setItem("nyt-favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -34,7 +34,7 @@ export function FavoritesProvider({ children }) {
   );
 }
 
-// ✅ Questa è la riga importante:
+
 export const useFavorites = () => useContext(FavoritesContext);
 
 export default FavoritesContext;
