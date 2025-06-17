@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className="page-content">
       <div className="home-container">
-        <h2>📰 Home Page - Notizie NYT</h2>
+        <h2>📰 NYT Top Stories</h2>
 
         {articles.length === 0 ? (
           <p>Caricamento notizie...</p>

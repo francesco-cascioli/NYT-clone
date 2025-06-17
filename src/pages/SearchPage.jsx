@@ -27,13 +27,13 @@ function SearchPage() {
   return (
     <div className="page-content">
       <div className="search-container">
-        <h2>🔍 Cerca notizie</h2>
+        <h2>🔍 Search articles</h2>
 
         <form onSubmit={handleSearch} style={{ marginBottom: "2rem" }}>
           <input
             type="text"
             value={query}
-            placeholder="Es: boxing, art, politics..."
+            placeholder="e.g boxing, art, politics..."
             onChange={(e) => setQuery(e.target.value)}
             style={{
               padding: "0.5rem",
@@ -54,14 +54,14 @@ function SearchPage() {
               cursor: "pointer",
             }}
           >
-            Cerca
+            Search
           </button>
         </form>
 
-        {loading && <p>Caricamento risultati...</p>}
+        {loading && <p>Loading results...</p>}
 
         {!loading && searched && results.length === 0 && (
-          <p>Nessun articolo trovato per "{query}"</p>
+          <p>No articles found for "{query}"</p>
         )}
 
         {!loading &&

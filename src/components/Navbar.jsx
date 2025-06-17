@@ -21,9 +21,9 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { path: "/search", label: "🔍 Ricerca" },
-    { path: "/favorites", label: "⭐ Preferiti" },
-    { path: "/section/world", label: "🌍 Mondo" },
+    { path: "/search", label: "🔍 Search" },
+    { path: "/favorites", label: "⭐ Favorites" },
+    { path: "/section/world", label: "🌍 World" },
     { path: "/section/technology", label: "💻 Tech" },
     { path: "/section/arts", label: "🎨 Arte" },
   ];

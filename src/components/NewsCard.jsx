@@ -31,7 +31,7 @@ function NewsCard({ title, abstract, url, image }) {
         rel="noopener noreferrer"
         className="news-link"
       >
-        Leggi di più →
+        Read more →
       </a>
       <button onClick={handleFavorite} className="favorite-button">
         {isFavorite ? "⭐" : "☆"}

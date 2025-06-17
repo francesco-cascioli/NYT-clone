@@ -12,9 +12,9 @@ function FavoritesPage() {
   return (
     <div className="page-content">
       <div className="favorites-container">
-        <h2>⭐ I tuoi articoli preferiti</h2>
+        <h2>⭐ Your saved articles</h2>
         {favorites.length === 0 ? (
-          <p>Nessun preferito ancora.</p>
+          <p>No favorites yet.</p>
         ) : (
           favorites.map((article) => (
             <NewsCard
