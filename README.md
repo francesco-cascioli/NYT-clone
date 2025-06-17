@@ -1,77 +1,85 @@
 # 📰 NYT Clone
 
-This is a React-based clone of the New York Times homepage that displays top articles using the official [New York Times API](https://developer.nytimes.com/).  
-Built as a portfolio project to demonstrate front-end development skills using **React**, **Axios**, **React Router**, and **localStorage**.
+This is a front-end project built with React that replicates the core layout and functionality of the New York Times homepage.  
+The app displays top articles from various sections using the official New York Times API, and includes features such as article search, favorites, and dark mode.
+
+👉 [Live Demo](https://francesco-cascioli.github.io/NYT-clone/)
 
 ---
 
-## 🔍 Features
+## 🔑 Main Features
 
-- ✅ Browse top articles from various sections: World, Tech, Arts, Sports  
-- 🔎 Search functionality (with keyword filtering)  
-- ⭐ Favorite articles saved with localStorage  
-- 📱 Responsive design with a hamburger menu for mobile  
-- 🌙 Dark mode support (coming soon)
-
----
-
-## 🛠️ Technologies Used
-
-- [React](https://reactjs.org/)  
-- [Axios](https://axios-http.com/)  
-- [React Router DOM](https://reactrouter.com/)  
-- [New York Times API](https://developer.nytimes.com/)  
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
-- CSS (Vanilla)
+- Browse top stories by category (World, Technology, Arts)
+- Search articles by keyword
+- Mark and store favorite articles using localStorage
+- Responsive layout for mobile and desktop
+- Toggle between light and dark mode
+- Custom 404 error page
 
 ---
 
-## 🚀 Getting Started
+## 🧰 Tech Stack
+
+- **React** – UI and component logic  
+- **Vite** – Fast development and build tool  
+- **Axios** – API requests  
+- **React Router DOM** – Routing system  
+- **New York Times API** – Article data  
+- **CSS** – Styling and responsive layout
+
+---
+
+## 🛠 Setup Instructions
+
+To run the project locally:
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/francesco-cascioli/NYT-clone.git
    cd NYT-clone
-   ```
+Install dependencies
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+bash
+Copia
+Modifica
+npm install
+Get your New York Times API key
 
-3. **Get your NYT API key**
-   - Register at [developer.nytimes.com](https://developer.nytimes.com/)
-   - Replace `"YOUR_API_KEY"` in `/src/api/nyt.js` with your personal key
+Sign up at developer.nytimes.com
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+Replace the placeholder key in /src/api/nyt.js with your own API key
 
----
+Start the development server
 
-## 📁 Folder Structure
+bash
+Copia
+Modifica
+npm run dev
+Build and deploy to GitHub Pages
 
-```
+bash
+Copia
+Modifica
+npm run build
+npm run deploy
+📁 Project Structure
+bash
+Copia
+Modifica
 src/
-├── api/                // API call logic
-├── components/         // Reusable components like Navbar, NewsCard
-├── context/            // Favorites context
-├── pages/              // Route views: Home, Search, Section, Favorites
-├── router/             // Routing logic
-├── utils/             // Local Storage
-```
+├── api/           # API logic (fetch & search)
+├── components/    # Reusable UI components
+├── context/       # Theme and favorites context
+├── pages/         # Page views (Home, Search, Favorites, etc.)
+├── router/        # App routing
+├── utils/         # Utility functions (e.g. localStorage)
+📌 About the Project
+This application was developed as part of my front-end learning journey.
+It combines core concepts such as state management, routing, API integration, and responsive design.
 
----
+The main goal was to create a clean, functional, and user-friendly experience using real-world data.
 
-## 📄 License
+👤 Author
+Developed by Francesco Cascioli
 
-This project is open source and free to use for educational or portfolio purposes.
-
----
-
-## 🙋‍♂️ Author
-
- **Francesco Cascioli**
-
-- GitHub: [@francesco-cascioli](https://github.com/francesco-cascioli)
+Feel free to explore more of my projects on GitHub!
