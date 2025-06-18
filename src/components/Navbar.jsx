@@ -25,7 +25,7 @@ function Navbar() {
     { path: "/favorites", label: "⭐ Favorites" },
     { path: "/section/world", label: "🌍 World" },
     { path: "/section/technology", label: "💻 Tech" },
-    { path: "/section/arts", label: "🎨 Arte" },
+    { path: "/section/arts", label: "🎨 Arts" },
   ];
 
   const linkStyle = (path) => ({
