@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { toggleFavorite, getFavorites } from "../utils/localStorage";
+import { toast } from "react-toastify";
+
 
 function NewsCard({ title, abstract, url, image }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -10,9 +12,13 @@ function NewsCard({ title, abstract, url, image }) {
   }, [url]);
 
   const handleFavorite = () => {
-    const updated = toggleFavorite({ title, abstract, url, image });
-    setIsFavorite(updated.some((a) => a.url === url));
-  };
+  const updated = toggleFavorite({ title, abstract, url, image });
+  const isNowFavorite = updated.some((a) => a.url === url);
+  setIsFavorite(isNowFavorite);
+
+  toast(isNowFavorite ? "⭐ Added to favorites" : "❌ Removed from favorites");
+};
+
 
   return (
     <div className="news-card">

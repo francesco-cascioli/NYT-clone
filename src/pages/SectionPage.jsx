@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import NewsCard from "../components/NewsCard";
+import Loader from "../components/Loader";
 
 const API_KEY = "57DJbsOAuF5XYrJI589gh931ABK0wm17";
 

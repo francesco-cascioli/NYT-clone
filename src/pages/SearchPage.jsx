@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { searchArticles } from "../api/nyt";
 import NewsCard from "../components/NewsCard";
+import Loader from "../components/Loader";
 
 function SearchPage() {
   const [query, setQuery] = useState("");

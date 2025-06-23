@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTopStories } from "../api/nyt";
 import NewsCard from "../components/NewsCard";
+import Loader from "../components/Loader";
 
 function Home() {
   const [articles, setArticles] = useState([]);
