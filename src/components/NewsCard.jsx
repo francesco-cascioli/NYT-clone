@@ -28,7 +28,7 @@ function NewsCard({ title, abstract, url, image, article }) {
 
       <Link
         to={`/article/${encodeURIComponent(title)}`}
-        state={{ article: { title, abstract, url, image } }}
+        state={{ article }} 
         className="news-link"
         style={{ marginRight: "1rem", display: "inline-block" }}
       >
