@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { toggleFavorite, getFavorites } from "../utils/localStorage";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
-
-function NewsCard({ title, abstract, url, image }) {
+function NewsCard({ title, abstract, url, image, article }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -12,33 +12,29 @@ function NewsCard({ title, abstract, url, image }) {
   }, [url]);
 
   const handleFavorite = () => {
-  const updated = toggleFavorite({ title, abstract, url, image });
-  const isNowFavorite = updated.some((a) => a.url === url);
-  setIsFavorite(isNowFavorite);
-
-  toast(isNowFavorite ? "⭐ Added to favorites" : "❌ Removed from favorites");
-};
-
+    const updated = toggleFavorite({ title, abstract, url, image });
+    const isNowFavorite = updated.some((a) => a.url === url);
+    setIsFavorite(isNowFavorite);
+    toast(isNowFavorite ? "⭐ Added to favorites" : "❌ Removed from favorites");
+  };
 
   return (
     <div className="news-card">
       {image && (
-        <img
-          src={image}
-          alt={title}
-          className="news-image"
-        />
+        <img src={image} alt={title} className="news-image" />
       )}
       <h3 className="news-title">{title}</h3>
       <p className="news-abstract">{abstract}</p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+
+      <Link
+        to={`/article/${encodeURIComponent(title)}`}
+        state={{ article: { title, abstract, url, image } }}
         className="news-link"
+        style={{ marginRight: "1rem", display: "inline-block" }}
       >
         Read more →
-      </a>
+      </Link>
+
       <button onClick={handleFavorite} className="favorite-button">
         {isFavorite ? "⭐" : "☆"}
       </button>
@@ -47,4 +43,3 @@ function NewsCard({ title, abstract, url, image }) {
 }
 
 export default NewsCard;
-

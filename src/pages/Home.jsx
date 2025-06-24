@@ -37,7 +37,7 @@ function Home() {
       <div className="home-container" style={{ maxWidth: "900px", margin: "0 auto" }}>
         <h2 style={{ marginBottom: "1.5rem" }}>📰 NYT Top Stories</h2>
 
-        {/* Filtro */}
+      
         <CategoryFilter
           value={filter}
           onChange={(value) => {
@@ -46,43 +46,50 @@ function Home() {
           }}
         />
 
-        {/* Articoli */}
         {articles.length === 0 ? (
           <Loader />
         ) : visibleArticles.length === 0 ? (
           <p>No articles found for this category.</p>
         ) : (
           visibleArticles.map((article) => (
-            <NewsCard
-              key={article.url}
-              title={article.title}
-              abstract={article.abstract}
-              url={article.url}
-              image={article.multimedia?.[0]?.url}
-            />
-          ))
-        )}
+     <NewsCard
+         key={article.url}
+         title={article.title}
+         abstract={article.abstract}
+         url={article.url}
+        image={article.multimedia?.[0]?.url}
+     article={{
+        title: article.title,
+        abstract: article.abstract,
+        url: article.url,
+        image: article.multimedia?.[0]?.url,
+        byline: article.byline,
+        published_date: article.published_date,
+        section: article.section
+       }}
+     /> 
+   ))
+)}
 
-        {/* Bottone "Load More" */}
-        {visibleCount < filteredArticles.length && (
-          <button
-            onClick={handleLoadMore}
-            style={{
-              marginTop: "1rem",
-              padding: "0.6rem 1.2rem",
-              fontSize: "1rem",
-              backgroundColor: "#007BFF",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            Load more
-          </button>
-        )}
-      </div>
+    {visibleCount < filteredArticles.length && (
+      <button
+         onClick={handleLoadMore}
+          style={{
+            marginTop: "1rem",
+            padding: "0.6rem 1.2rem",
+            fontSize: "1rem",
+             backgroundColor: "#007BFF",
+             color: "white",
+             border: "none",
+             borderRadius: "5px",
+             cursor: "pointer",
+           }}
+         >
+          Load more
+        </button>
+      )}
     </div>
+   </div>
   );
 }
 
