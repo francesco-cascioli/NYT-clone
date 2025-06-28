@@ -7,6 +7,8 @@ import FavoritesPage from "./pages/FavoritesPage";
 import Navbar from "./components/Navbar";
 import { useTheme } from "./context/ThemeContext";
 import NotFound from "./pages/NotFound";
+import RecentlyViewedPage from "./pages/RecentlyViewedPage";
+
 
 function App() {
   const { darkMode } = useTheme();
@@ -22,6 +24,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/recently-viewed" element={<RecentlyViewedPage />} />
       </Routes>
     </div>
   );
