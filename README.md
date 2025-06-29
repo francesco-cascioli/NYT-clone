@@ -35,10 +35,8 @@ Built to practice and demonstrate front-end development skills with **React**, *
 
 ---
 
-📁 Project Structure
-bash
-Copia
-Modifica
+## 📁 Project Structure
+
 src/
 ├── api/               # NYT API functions
 ├── components/        # Reusable UI components
@@ -50,7 +48,8 @@ src/
 
 ---
 
-🤔 Why this project?
+## 🤔 Why this project?
+
 This app was developed to apply React fundamentals while adding a personal touch.
 I’ve avoided simply following a tutorial — instead, I focused on:
 
@@ -66,14 +65,16 @@ Thinking like a developer, not solo like a student
 
 ---
 
-👤 Author
+## 👤 Author
+
 Francesco Cascioli – Front-end developer in training
 📍 Umbria, Italy
 📫 GitHub
 
+---
 
+## 📄 License
 
-📄 License
 This project is for educational purposes only.
 All article data is provided by The New York Times.
 
