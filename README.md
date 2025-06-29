@@ -1,59 +1,77 @@
-# 📰 NYT Clone – React News App
+# 📰 NYT Clone
 
-NYT Clone is a web application developed as a front-end project to simulate a modern news platform using real-time data from the official New York Times API.  
-Users can explore top news by category, search articles, save favorites, and switch between light and dark mode.
+A React-based web app that replicates the layout and core functionality of the New York Times homepage.  
+This project fetches top stories from the official [New York Times API](https://developer.nytimes.com/) and allows users to browse, search, and save favorite articles.
 
-This project was built from scratch using React and demonstrates routing, API integration, theming, and responsive design.
+Built to practice and demonstrate front-end development skills with **React**, **React Router**, **Axios**, and **localStorage**.
 
----
-
-## 🚀 Features
-
-🔍 Search articles by keyword  
-🗂 Browse top news by section (World, Technology, Arts)  
-⭐ Save and view favorite articles using `localStorage`  
-🌙 Toggle between Light and Dark mode  
-📱 Mobile-responsive layout with hamburger menu  
-❌ 404 custom error page for invalid routes  
+🔗 [Live Demo](https://francesco-cascioli.github.io/NYT-clone/)
 
 ---
 
-## 🛠️ Tech Stack
+## 🔍 Features
 
-- **React** (JSX, Hooks, Context API)  
-- **Axios** for fetching data from the New York Times API  
-- **React Router DOM** for routing and navigation  
-- **Vite** for fast development and bundling  
-- **CSS** (vanilla, responsive)  
-- **New York Times Developer API** for real-time news
-
----
-
-## 📂 Project Structure
-
-📁 src
-├── api/ → API functions (fetch & search)
-├── components/ → Reusable components (Navbar, NewsCard)
-├── context/ → Theme and Favorites Context
-├── pages/ → Route views (Home, Search, Section, Favorites)
-├── utils/ → Utility functions (localStorage helpers)
-├── router/ → App routing (if applicable)
-
+- 📰 Browse top stories by section (World, Tech, Arts)
+- 🔎 Search for articles by keyword
+- ⭐ Add/remove favorites (persisted in `localStorage`)
+- 🌙 Light & Dark mode toggle
+- 🕒 Recently viewed articles (saved in `localStorage`)
+- 🔄 Load more articles on demand
+- 📱 Responsive layout and mobile-friendly navbar
+- ❌ Custom 404 error page
+- 🔔 Toast notifications on favorite actions
 
 ---
 
-## ▶️ Live Demo
+## 🧱 Tech Stack
 
-🌐 [Click here to try the app online](https://francesco-cascioli.github.io/NYT-clone/)
+- **React** – component-based UI
+- **React Router DOM** – client-side routing
+- **Axios** – data fetching from NYT API
+- **Vite** – fast development and build tool
+- **React Toastify** – user notifications
+- **CSS (vanilla)** – styling and layout
+- **localStorage** – client-side persistence
 
----
+
+📁 Project Structure
+bash
+Copia
+Modifica
+src/
+├── api/               # NYT API functions
+├── components/        # Reusable UI components
+├── context/           # Theme context (dark mode)
+├── pages/             # Route views (Home, Search, Favorites, etc.)
+├── utils/             # localStorage utils (favorites, recently viewed)
+├── App.jsx            # Routing logic
+├── main.jsx           # Entry point
+
+
+🤔 Why this project?
+This app was developed to apply React fundamentals while adding a personal touch.
+I’ve avoided simply following a tutorial — instead, I focused on:
+
+Structuring components and logic clearly
+
+Applying reusable utilities for favorites and history
+
+Enhancing user experience (dark mode, toasts, loaders)
+
+Making the UI mobile-friendly
+
+Thinking like a developer, not solo like a student
+
+
+
+👤 Author
+Francesco Cascioli – Front-end developer in training
+📍 Umbria, Italy
+📫 GitHub
+
+
 
 📄 License
-Project developed for educational and portfolio purposes – not for commercial use.
-All article data is provided by the New York Times API.
-
-👨‍💻 Author
-Francesco Cascioli
-📍 Umbria, Italy
-🌐 Front-End Developer in training
+This project is for educational purposes only.
+All article data is provided by The New York Times.
 
