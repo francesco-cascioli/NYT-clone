@@ -33,6 +33,7 @@ Built to practice and demonstrate front-end development skills with **React**, *
 - **CSS (vanilla)** – styling and layout
 - **localStorage** – client-side persistence
 
+---
 
 📁 Project Structure
 bash
@@ -47,6 +48,7 @@ src/
 ├── App.jsx            # Routing logic
 ├── main.jsx           # Entry point
 
+---
 
 🤔 Why this project?
 This app was developed to apply React fundamentals while adding a personal touch.
@@ -62,7 +64,7 @@ Making the UI mobile-friendly
 
 Thinking like a developer, not solo like a student
 
-
+---
 
 👤 Author
 Francesco Cascioli – Front-end developer in training
